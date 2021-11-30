@@ -55,6 +55,11 @@ public class R {
         throw new CommonException(code, message);
     }
 
+    /**
+     * 返回值是布尔类型
+     * @param value
+     * @return
+     */
     public static Result decision (boolean value){
         return value ? success() : fail();
     }
