@@ -6,11 +6,15 @@
 
     <groupId>io.github.bootmeta.result</groupId>
     <artifactId>common-result</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
     <description>定义了一个返回的结果结构</description>
     <name>common-result</name>
     <url>https://github.com/bootmeta/common-result</url>
 
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
     <developers>
         <developer>
             <id>fengyupeng</id>

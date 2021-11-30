@@ -1,31 +1,33 @@
-package io.github.bootmeta.result.abs;
+package io.github.bootmeta.exception;
 
-import io.github.bootmeta.result.Result;
+import io.github.bootmeta.result.constant.C;
+
+import java.util.UUID;
+
 
 /**
- * 抽象结果集，用户返回json格式数据，
+ * 异常信息
  *
  * @author fengyupeng
  */
-public class AbsResult implements Result {
+public class CommonException extends RuntimeException {
 
-    private static final long serialVersionUID = -8564317802372171889L;
+    private static final long serialVersionUID = 1379659528682508908L;
 
+    private final String seqId = UUID.randomUUID().toString().replaceAll("-", "").toLowerCase();
     private int type;
-
     private int code;
-
     private String message;
 
-    public AbsResult(int type, int code, String message) {
-        this.type = type;
+    public CommonException() {
+    }
+
+    public CommonException(int code, String message) {
         this.code = code;
         this.message = message;
+        this.type = C.TYPE_RESULT_PROBLEM;
     }
 
-    public AbsResult() {
-
-    }
 
     public int getType() {
         return type;
@@ -43,6 +45,7 @@ public class AbsResult implements Result {
         this.code = code;
     }
 
+    @Override
     public String getMessage() {
         return message;
     }
